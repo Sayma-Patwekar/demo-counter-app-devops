@@ -30,7 +30,7 @@ pipeline{
 
         stage('Static code analysis'){
             steps{
-                withSonarQubeEnv(credentialsId: 'sonarqube-api-key', installationName: 'My SonarQube Server') {
+                withSonarQubeEnv(credentialsId: 'sonarqube-api-key', installationName: 'sonarqube') {
                  bat 'mvn clean package sonar:sonar'
                 }
             }
